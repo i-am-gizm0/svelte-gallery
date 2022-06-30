@@ -1,0 +1,10 @@
+:root {
+    --margin: 64px;
+    color-scheme: light dark;
+}
+
+@media (max-width: 1000px) {
+    :root {
+        --margin: 32px;
+    }
+}

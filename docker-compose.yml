@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  gallery:
+    build: . # Build from the current directory
+    container_name: gallery
+    env_file: .env
+    volumes:
+      - ./galleries:/gallery/galleries
+      - ./testcache:/gallery/cache
+    # Uncomment if you want access to the instance from your local network
+    # ports:
+    #   - 3000:3000
+    restart: unless-stopped

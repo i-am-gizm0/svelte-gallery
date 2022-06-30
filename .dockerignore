@@ -1,0 +1,14 @@
+build
+node_modules
+.env
+.env.example
+.eslintrc.cjs
+.gitignore
+.prettierrc
+*.md
+testcache
+.github
+.svelte-kit
+galleries
+Dockerfile
+docker-compose.yml

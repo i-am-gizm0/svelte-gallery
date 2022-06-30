@@ -1,0 +1,23 @@
+<site>
+    <nav>
+        <group name="Test Group 1">
+            <gallery path="/testgal" name="Test Gallery" />
+        </group>
+    </nav>
+    <collections>
+        <collection id="recent" name="Recent Events">
+            <gallery path="/testgal" />
+        </collection>
+    </collections>
+    <defaults>
+        <header-image>
+            <img
+                src="https://unsplash.com/photos/AyP33_mL1dY/download"
+                alt="A puffin sitting on a rock"
+                blurhash="L7A0s;^*0M9Z~AxZIqoyDjjEkExu"
+                width="5640"
+                height="4000"
+            />
+        </header-image>
+    </defaults>
+</site>

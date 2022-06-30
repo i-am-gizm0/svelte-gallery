@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gallery>
+    <meta>
+        <title>Example Gallery</title>
+        <overrides>
+            <small-large small="Gallery" large="Example" />
+            <large-small large="Example" small="Gallery" />
+        </overrides>
+        <description>Lorem ipsum dolor sit amet, reprehenderit dolore velit commodo deserunt ullamco ipsum pariatur voluptate esse. Laboris occaecat reprehenderit esse ex cupidatat esse nisi adipisicing fugiat quis amet esse. Est exercitation adipisicing eiusmod fugiat sint eu sit adipisicing dolor dolore. Culpa culpa mollit quis eiusmod amet veniam non. Proident ex ut Lorem est incididunt. Sit ipsum aliquip consequat irure aute nisi enim minim esse sint pariatur laborum non sint.</description>
+        <header-image>
+            <img link="#img03" />
+        </header-image>
+    </meta>
+    <sections>
+        <section type="markdown">
+# A Markdown heading  
+**Some Text!**
+        </section>
+        <section type="featured">
+            <img link="#img04" />
+        </section>
+        <section type="gallery">
+            <img link="#img02" />
+            <img link="#img01" />
+            <img link="#img04" />
+            <img
+                src="https://unsplash.com/photos/2Hzmz15wGik/download"
+                alt="A nature image"
+                title="A nature image"
+                blurhash="LmD,ZNxuDjae_Nt7Myt7.7ofRkt7"
+                width="5184"
+                height="3456"
+            />
+        </section>
+    </sections>
+    <resources>
+        <img
+            id="img01"
+            src="https://unsplash.com/photos/AyP33_mL1dY/download"
+            alt="A nature image"
+            title="A nature image"
+            blurhash="L7A0s;^*0M9Z~AxZIqoyDjjEkExu"
+            width="5400"
+            height="4000"
+        />
+        <img
+            id="img02"
+            src="https://unsplash.com/photos/5kpLdJJFWcw/download"
+            alt="A nature image"
+            title="A nature image"
+            blurhash="LaCsT|-os,fl~W%1oJkC%LoLj[of"
+            width="499"
+            height="374"
+        />
+        <img
+            id="img03"
+            src="https://unsplash.com/photos/NRQV-hBF10M/download"
+            alt="A nature image"
+            title="A nature image"
+            blurhash="LtHf9pR*9uo0_NbbWcjt-pWBs.of"
+            width="7360"
+            height="4912"
+        />
+        <img
+            id="img04"
+            src="https://unsplash.com/photos/KonWFWUaAuk/download"
+            alt="A nature image"
+            title="A nature image"
+            blurhash="LXF}wHzaR%oMxgs;n$ayJ8a$oJfk"
+            width="5128"
+            height="3419"
+        />
+    </resources>
+</gallery>
