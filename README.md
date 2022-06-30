@@ -1,6 +1,6 @@
 # svelte-gallery
 
-> **Note**
+> **Warning**
 > This platform is under heavy development and there may be breaking changes at any time until version 1.0.0. Until then, breaking changes will be a semver "minor" version (0.xx.0). After version 1.0.0, we will follow regular [semver conventions](https://semver.org/).
 
 # Getting Started
