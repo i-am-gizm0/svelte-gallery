@@ -38,7 +38,7 @@
         "highlight.js": "^11.3.1",
         "node-fetch": "^3.2.6",
         "sanitize-html": "^2.6.1",
-        "sharp": "^0.30.6",
+        "sharp": "^0.30.7",
         "svelte-blurhash": "^1.2.1",
         "svelte-markdown": "^0.2.1"
     }
