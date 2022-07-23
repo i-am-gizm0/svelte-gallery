@@ -1,7 +1,7 @@
 <script lang="ts">
     // TODO: File issue about this
     import SvelteMarkdown from 'svelte-markdown/src/SvelteMarkdown.svelte';
-    import sanitize from 'sanitize-html';
+    // import sanitize from 'sanitize-html';
     import highlight from 'highlight.js';
 
     export let content: string;
