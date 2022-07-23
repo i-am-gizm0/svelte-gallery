@@ -12,7 +12,7 @@ import { join } from 'path';
 const cache = new FileCache();
 const resizer = new ImageProcessor(process.env.GALLERIES_BASE);
 
-export const get: RequestHandler = async ({ params, url }) => {
+export const GET: RequestHandler = async ({ params, url }) => {
     const { gallery, image } = params;
     try {
         getGalleryMetadata(gallery);
