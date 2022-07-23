@@ -1,7 +1,7 @@
 import type { RequestHandler } from '.svelte-kit/types/src/routes/api/galleries/[galId]/__types/meta';
 import { getGalleryMetadata } from '$lib/gallerieshelper';
 
-export const get: RequestHandler = async ({ params }) => {
+export const GET: RequestHandler = async ({ params }) => {
     const { galId } = params;
 
     try {
