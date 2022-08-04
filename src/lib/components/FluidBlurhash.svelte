@@ -2,7 +2,7 @@
     import generateSources from '$lib/sourcegenerator';
     import { onMount } from 'svelte';
 
-    import BlurhashPicture from 'svelte-blurhash/src/BlurhashPicture.svelte';
+    import BlurhashPicture from "$lib/modules/blurhash";
     export let image: Image;
 
     export let width = 0;
