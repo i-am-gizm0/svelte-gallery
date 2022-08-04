@@ -1,5 +1,4 @@
 /// <reference types="@sveltejs/kit" />
-/// <reference types="svelte-blurhash" />
 /// <reference types="svelte-markdown" />
 
 declare namespace App {

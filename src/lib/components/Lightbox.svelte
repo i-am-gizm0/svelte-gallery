@@ -1,6 +1,6 @@
 <script lang="ts">
     import { fade, fly } from 'svelte/transition';
-    import BlurhashPicture from 'svelte-blurhash/src/BlurhashPicture.svelte';
+    import BlurhashPicture from "$lib/modules/blurhash";
     import generateSources from '$lib/sourcegenerator';
     let lightboxImage: Image;
     let gallery: Image[];
