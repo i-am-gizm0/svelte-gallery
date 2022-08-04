@@ -19,9 +19,6 @@
 
 <IntersectionObserver {element} once bind:intersecting={hasIntersected}>
     <div style="position: relative; width: {width}px; height: {height}px" bind:this={element}>
-        {#if !imageLoaded}
-            <Blurhash {hash} {width} {height} {fadeDuration} />
-        {/if}
         {#if hasIntersected}
             <picture>
                 <slot />
@@ -33,6 +30,9 @@
                     {height}
                 />
             </picture>
+        {/if}
+        {#if !imageLoaded}
+            <Blurhash {hash} {width} {height} {fadeDuration} />
         {/if}
     </div>
 </IntersectionObserver>
