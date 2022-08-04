@@ -15,11 +15,12 @@ const resizer = new ImageProcessor(process.env.GALLERIES_BASE);
 export const GET: RequestHandler = async ({ params, url }) => {
     const { gallery, image } = params;
     try {
-        getGalleryMetadata(gallery);
+        await getGalleryMetadata(gallery);
     } catch (e) {
         return {
             status: 404,
             error: `That gallery doesn't exist`,
+            body: `That gallery doesn't exist`
         };
     }
     const imagepath = `${gallery}/${image}`;
