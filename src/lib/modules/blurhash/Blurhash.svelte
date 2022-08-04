@@ -29,6 +29,6 @@
         bind:this={canvas}
         width={resolutionX}
         height={resolutionY}
-        style="width: 100%; height: 100%; z-index: 0"
+        style="width: 100%; height: 100%"
     />
 </div>

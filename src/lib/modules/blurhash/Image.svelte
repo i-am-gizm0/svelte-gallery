@@ -13,7 +13,7 @@
     {alt}
     {width}
     {height}
-    style="position: absolute; top: 0; left: 0; z-index: -1"
+    style="position: absolute; top: 0; left: 0"
     loading="lazy"
     decoding="async"
 />
