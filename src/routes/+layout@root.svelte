@@ -1,29 +1,15 @@
-<script context="module" lang="ts">
-    import type { Load } from '@sveltejs/kit';
-
-    export const load: Load = async ({ fetch, session }) => {
-        const galleriesResponse = await fetch('/api/galleries');
-        const galleries = await galleriesResponse.json();
-        return {
-            props: {
-                navLinks: galleries,
-                resources: session.resources,
-            },
-        };
-    };
-</script>
-
 <script lang="ts">
     import type { Group } from '$lib/types';
     import NavBar from '$lib/components/NavBar.svelte';
+    import type { PageData } from './$types';
 
-    export let resources: App.Resources;
-    export let navLinks: Group[];
+    export let data: PageData;
+    $: ({ resources, navLinks } = data);
 </script>
 
 <NavBar nameStart={resources.site.start} nameEnd={resources.site.end} {navLinks} />
 
-<slot />
+<slot {resources} />
 
 <svelte:head>
     <link rel="preconnect" href="https://fonts.googleapis.com" />

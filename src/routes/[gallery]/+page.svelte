@@ -1,26 +1,3 @@
-<script context="module" lang="ts">
-    import type { Load } from '.svelte-kit/types/src/routes/[gallery]/__types/index';
-
-    export const load: Load = async ({ params, fetch, session }) => {
-        const { gallery } = params;
-        const apiResponse = await fetch(`/api/galleries/${encodeURIComponent(gallery)}`);
-        if (apiResponse.ok) {
-            return {
-                props: {
-                    gallery: await apiResponse.json(),
-                    resources: session.resources,
-                    defaultHeaderImage: session.defaults.headerImage,
-                },
-            };
-        } else {
-            return {
-                status: apiResponse.status,
-                error: new Error((await apiResponse.json()).userError),
-            };
-        }
-    };
-</script>
-
 <script lang="ts">
     import Header from '$lib/components/Header.svelte';
     import ImageGallery from '$lib/components/gallerysections/ImageGallery.svelte';
@@ -28,9 +5,9 @@
     import FeaturedImage from '$lib/components/gallerysections/FeaturedImage.svelte';
     import Lightbox from '$lib/components/Lightbox.svelte';
 
-    export let gallery: Gallery;
-    export let resources: App.Resources;
-    export let defaultHeaderImage: Image;
+    import type { PageData } from './$types';
+    export let data;
+    $: ({gallery, resources, defaultHeaderImage} = data);
 
     $: titleParts = (
         gallery.bigSmallTitle ? gallery.bigSmallTitle.split('\n') : [gallery.fullTitle, '']

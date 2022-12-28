@@ -1,9 +1,10 @@
+import { json } from '@sveltejs/kit';
 import { dev } from '$app/env';
 import { getGalleryMetadata } from '$lib/gallerieshelper';
 
 import FileCache from '$lib/modules/filecache';
 import ImageProcessor, { type ProcessArgs } from '$lib/modules/imageprocessor';
-import type { RequestHandler } from '.svelte-kit/types/src/routes/[gallery]/__types/[image]';
+import type { RequestHandler } from '..svelte-kit/types/src/routes/[gallery]/__types/[image]';
 
 import 'dotenv/config';
 import { existsSync } from 'fs';
@@ -17,11 +18,7 @@ export const GET: RequestHandler = async ({ params, url }) => {
     try {
         await getGalleryMetadata(gallery);
     } catch (e) {
-        return {
-            status: 404,
-            error: `That gallery doesn't exist`,
-            body: `That gallery doesn't exist`
-        };
+        return new Response(`That gallery doesn't exist`, { status: 404 });
     }
     const imagepath = `${gallery}/${image}`;
     log({ params, imagepath });
@@ -38,10 +35,7 @@ export const GET: RequestHandler = async ({ params, url }) => {
     log({ fileDefinition });
 
     if (!existsSync(join(process.env.GALLERIES_BASE, imagepath))) {
-        return {
-            status: 404,
-            error: `That image doesn't exist`,
-        };
+        return new Response(undefined, { status: 404 });
     }
 
     const cacheFilePath = resizer.getCacheFilePath(...fileDefinition);
@@ -54,13 +48,11 @@ export const GET: RequestHandler = async ({ params, url }) => {
         time('Read File');
         const body = await cache.getFile(cacheFilePath);
         timeEnd('Read File');
-        return {
-            status: 200,
+        return new Response(body, {
             headers: {
-                'Content-Type': contentType,
-            },
-            body,
-        };
+                'Content-Type': contentType
+            }
+        });
     }
     log('cache miss');
 
@@ -77,13 +69,13 @@ export const GET: RequestHandler = async ({ params, url }) => {
         timeEnd('Write File');
     }
 
-    return {
+    return new Response(rawImage, {
         status: 201,
         headers: {
-            'Content-Type': contentType,
-        },
-        body: rawImage,
-    };
+            'Content-Type': contentType
+        }
+    });
+
 };
 
 const log = dev ? console.log : () => undefined;
