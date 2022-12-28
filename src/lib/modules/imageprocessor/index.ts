@@ -8,7 +8,7 @@ export default class ImageProcessor {
     private baseDir: string;
 
     /** Creates a new `ImageProcessor` which looks for images from `baseDir` */
-    public constructor(baseDir: string) {
+    public constructor(baseDir = '') {
         this.baseDir = resolve(baseDir);
     }
 

@@ -16,7 +16,7 @@ import type {
 } from '../types';
 import { castToArray, condenseImgTag, removeUndefined } from '../util';
 
-const GALLERIES_BASE = resolve(process.env.GALLERIES_BASE);
+const GALLERIES_BASE = resolve(process.env.GALLERIES_BASE || '');
 
 const loadGalleries = async () => {
     const listFile = await readFile(join(GALLERIES_BASE, 'site.xml'), 'utf8');
