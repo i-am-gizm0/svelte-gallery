@@ -12,7 +12,7 @@
         "format": "prettier --ignore-path .gitignore --write --plugin-search-dir=. ."
     },
     "devDependencies": {
-        "@sveltejs/adapter-node": "*",
+        "@sveltejs/adapter-node": "^1.0.0",
         "@sveltejs/kit": "^1.0.1",
         "@types/node": "^17.0.31",
         "@types/sanitize-html": "^2.6.1",
