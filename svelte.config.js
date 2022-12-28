@@ -12,6 +12,9 @@ const config = {
         prerender: {
             enabled: false,
         },
+        env: {
+            publicPrefix: 'SITE_'
+        }
     },
 };
 

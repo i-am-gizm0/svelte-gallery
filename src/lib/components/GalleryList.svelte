@@ -38,7 +38,7 @@
     <div class="galleries">
         {#if galleries?.length}
             {#each galleries as gallery}
-                <a sveltekit:prefetch class="gallery" href={gallery.galleryUrl}>
+                <a data-sveltekit-preload-data class="gallery" href={gallery.galleryUrl}>
                     <div class="img">
                         <div class="blurhash-wrapper">
                             <FluidBlurhash image={gallery.image} />

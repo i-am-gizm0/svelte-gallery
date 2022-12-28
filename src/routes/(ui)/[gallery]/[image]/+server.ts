@@ -1,12 +1,10 @@
-import { json } from '@sveltejs/kit';
 import { dev } from '$app/env';
 import { getGalleryMetadata } from '$lib/gallerieshelper';
 
 import FileCache from '$lib/modules/filecache';
 import ImageProcessor, { type ProcessArgs } from '$lib/modules/imageprocessor';
-import type { RequestHandler } from '..svelte-kit/types/src/routes/[gallery]/__types/[image]';
+import type { RequestHandler } from './$types';
 
-import 'dotenv/config';
 import { existsSync } from 'fs';
 import { join } from 'path';
 

@@ -11,7 +11,7 @@
             image?: Image;
         };
 
-    switch (
+    $: switch (
         status // Error message text
     ) {
         case 400: // Bad Request
@@ -75,7 +75,7 @@
                 status: status,
                 errorTitle: 'Internal server error',
                 userExplanation: `Something went wrong on our end; try again later. If the issue persists, contact the administrator.${
-                    dev ? `<br>Developer Details:<pre>${error.message}</pre>` : ''
+                    dev ? `<br>Developer Details:<pre>${error?.message}</pre>` : ''
                 }`,
             };
             break;
@@ -117,12 +117,12 @@
                 status: status,
                 errorTitle: 'Something went wrong',
                 userExplanation: `Something went wrong; try again later. If the issue persists, contact the administrator.${
-                    dev ? `<br>Developer Details:<pre>${error.message}</pre>` : ''
+                    dev ? `<br>Developer Details:<pre>${error?.message}</pre>` : ''
                 }`,
             };
             break;
     }
-    switch (
+    $: switch (
         status // Images
     ) {
         case 401: // Unauthenticated
@@ -200,13 +200,14 @@
 
     
     import Header from '$lib/components/Header.svelte';
+    import { siteName } from '$lib/sitename';
 
-    $: ({ errorTitle, userExplanation, image, resources } = errorStuff);
+    $: ({ errorTitle, userExplanation, image } = errorStuff);
 </script>
 
 <svelte:head>
     {#if errorStuff}
-        <title>{status} {errorTitle} - {resources.site.name}</title>
+        <title>{status} {errorTitle} - {siteName}</title>
     {/if}
 </svelte:head>
 

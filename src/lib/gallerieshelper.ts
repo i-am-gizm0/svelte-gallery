@@ -297,7 +297,7 @@ function translateImage(
             return undefined;
         }
     }
-    let uri = galleryId ? `/${galleryId}/${image.src}` : image.src;
+    const uri = galleryId ? `/${galleryId}/${image.src}` : image.src;
     return <GalleryImage>{
         uri,
         // TODO: This is janky but works for now

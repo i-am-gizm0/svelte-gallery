@@ -42,7 +42,7 @@
             <ul>
                 {#each group.galleries as gallery}
                     <li>
-                        <a sveltekit:prefetch href="{gallery.path}">{gallery.name}</a>
+                        <a data-sveltekit-preload-data href="{gallery.path}">{gallery.name}</a>
                     </li>
                 {/each}
             </ul>

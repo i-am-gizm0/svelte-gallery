@@ -1,10 +1,9 @@
 <script lang="ts">
     import GalleryList from '$lib/components/GalleryList.svelte';
     import Header from '$lib/components/Header.svelte';
-    import type { Collection } from '$lib/types';
     
     import type { PageData } from './$types';
-    export let data;
+    export let data: PageData;
 
     $: ({recentGalleries, headerImage, resources} = data);
 </script>

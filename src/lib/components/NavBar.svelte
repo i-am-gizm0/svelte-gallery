@@ -48,7 +48,7 @@
 </script>
 
 <nav class:solid={showMenu} class:loading={$navigating}>
-    <a sveltekit:prefetch href="/" id="title"><b>{nameStart}</b> {nameEnd}</a>
+    <a data-sveltekit-preload-data href="/" id="title"><b>{nameStart}</b> {nameEnd}</a>
     <!-- TODO: Performance: Switch from JS to media queries for visibility -->
     {#if menuVisible}
         <a href="#menu" class="menuToggle" on:click|preventDefault={() => (menuOpen = !menuOpen)}>
@@ -139,7 +139,7 @@
                     <span class="group-title">{group.name}</span>
                     {#each group.galleries as gallery}
                         <div class="link">
-                            <a sveltekit:prefetch href="{gallery.path}" class="nav-link"
+                            <a data-sveltekit-preload-data href="{gallery.path}" class="nav-link"
                                 >{gallery.name}</a
                             >
                         </div>

@@ -1,9 +1,10 @@
 import { error } from '@sveltejs/kit';
 import type { PageLoad } from './$types';
 
-export const load: PageLoad = async ({ params, fetch, session }) => {
+export const load: PageLoad = async ({ params, fetch, parent }) => {
     const { gallery } = params;
     const apiResponse = await fetch(`/api/galleries/${encodeURIComponent(gallery)}`);
+    const { resources: session } = await parent();
     if (apiResponse.ok) {
         return {
             gallery: await apiResponse.json(),

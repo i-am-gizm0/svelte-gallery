@@ -1,6 +1,6 @@
 import { json } from '@sveltejs/kit';
 import { getAllCollections } from '$lib/gallerieshelper';
-import type { RequestHandler } from '..svelte-kit/types/src/routes/api/collections/__types/[collectionId]';
+import type { RequestHandler } from './$types';
 
 export const GET: RequestHandler = async ({ params }) => {
     const { collectionId } = params;

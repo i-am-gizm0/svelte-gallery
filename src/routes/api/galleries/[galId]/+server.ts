@@ -1,5 +1,5 @@
 import { json } from '@sveltejs/kit';
-import type { RequestHandler } from '.svelte-kit/types/src/routes/api/galleries/[galId]/__types/index';
+import type { RequestHandler } from './$types';
 import { getGallery, translateGallery } from '$lib/gallerieshelper';
 
 export const GET: RequestHandler = async ({ params }) => {

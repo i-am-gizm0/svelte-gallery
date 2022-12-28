@@ -6,7 +6,7 @@
     import Lightbox from '$lib/components/Lightbox.svelte';
 
     import type { PageData } from './$types';
-    export let data;
+    export let data: PageData;
     $: ({gallery, resources, defaultHeaderImage} = data);
 
     $: titleParts = (
