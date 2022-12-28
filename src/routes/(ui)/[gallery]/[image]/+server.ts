@@ -1,5 +1,5 @@
-import { dev } from '$app/env';
-import { getGalleryMetadata } from '$lib/gallerieshelper';
+import { dev } from '$app/environment';
+import { getGalleryMetadata } from '$lib/server/gallerieshelper';
 
 import FileCache from '$lib/modules/filecache';
 import ImageProcessor, { type ProcessArgs } from '$lib/modules/imageprocessor';

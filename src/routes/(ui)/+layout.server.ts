@@ -1,4 +1,4 @@
-import { getDefaults, getGalleries } from '$lib/gallerieshelper';
+import { getDefaults, getGalleries } from '$lib/server/gallerieshelper';
 import type { LayoutServerLoad } from './$types';
 
 import { siteName, siteNameStart, siteNameEnd } from '$lib/sitename';

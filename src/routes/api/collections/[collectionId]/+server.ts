@@ -1,5 +1,5 @@
 import { json } from '@sveltejs/kit';
-import { getAllCollections } from '$lib/gallerieshelper';
+import { getAllCollections } from '$lib/server/gallerieshelper';
 import type { RequestHandler } from './$types';
 
 export const GET: RequestHandler = async ({ params }) => {

@@ -1,6 +1,6 @@
 import { json } from '@sveltejs/kit';
 import type { RequestHandler } from './$types';
-import { getGallery, translateGallery } from '$lib/gallerieshelper';
+import { getGallery, translateGallery } from '$lib/server/gallerieshelper';
 
 export const GET: RequestHandler = async ({ params }) => {
     const { galId } = params;

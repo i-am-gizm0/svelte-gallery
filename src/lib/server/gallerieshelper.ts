@@ -13,8 +13,8 @@ import type {
     DefinedImageContents,
     Image as UtilImage,
     MaybeArray,
-} from './types';
-import { castToArray, condenseImgTag, removeUndefined } from './util';
+} from '../types';
+import { castToArray, condenseImgTag, removeUndefined } from '../util';
 
 const GALLERIES_BASE = resolve(process.env.GALLERIES_BASE);
 
@@ -297,11 +297,11 @@ function translateImage(
             return undefined;
         }
     }
-    const uri = galleryId ? `/${galleryId}/${image.src}` : image.src;
+    const uri = !image.src.startsWith('http') ? `/${galleryId}/${image.src}` : image.src;
     return <GalleryImage>{
         uri,
         // TODO: This is janky but works for now
-        previewUri: image.src.includes('unsplash') ? `${image.src}?w=800` : uri,
+        previewUri: image.src.includes('http') ? `${image.src}?w=800` : uri,
         blurhash: image.blurhash,
         aspect: {
             width: image.width,
